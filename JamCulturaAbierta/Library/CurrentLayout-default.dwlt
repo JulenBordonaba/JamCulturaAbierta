@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 877, y: 492}
   m_MaxSize: {x: 16002, y: 14042}
   vertical: 0
-  controlID: 37764
+  controlID: 154
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 492}
   m_MaxSize: {x: 12002, y: 14042}
   vertical: 1
-  controlID: 37769
+  controlID: 113
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 221}
   m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 37770
+  controlID: 92
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -428,9 +428,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7c58ffff
-      m_LastClickedID: -42884
-      m_ExpandedIDs: d657ffff0858ffff3a58ffff6c58ffff7c58ffff8258ffff9658ffffa25cffffd26affff2e6cffffe86dfffff26dfffff86dffffb471ffff3676ffff148bffff4c8effff9e93ffffe493ffff1297ffff989bffffce9cffffc8a0ffff84a3ffffe2a4ffff42b4fffff8b4ffff10b5ffffbab5ffff70b6ffff64c0ffff66c0ffff9ec4ffffbccaffff30cffffff6cfffff0cd1ffff0cd2ffff76d2ffff9ed2ffff28d3ffff86d4ffff9cd4ffffccd6ffffe2d6ffffacdcfffff8dfffffc2e0ffff14e2ffff48e2ffff84faffff3efbffffb2360000c2420000ea420000324d0000245900007a5a0000a25a0000ac5a00003872000090720000a2720000ac720000b27a0000d67a0000e67a0000007b00000a7b0000
+      m_SelectedIDs: ca380000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1243,20 +1243,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_MisAsstes/Scenes
+    - Assets/_MisAsstes
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/_MisAsstes/Scenes
+  - Assets/_MisAsstes
   m_LastFoldersGridSize: 67
-  m_LastProjectPath: C:\Users\Julen\Desktop\Julen\Unity\JamCulturaAbierta
+  m_LastProjectPath: C:\Users\Julen\Desktop\Julen\Unity\JamCulturaAbierta\JamCulturaAbierta
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 17}
-    m_SelectedIDs: 1c390000
-    m_LastClickedID: 14620
-    m_ExpandedIDs: 00000000003900000239000000ca9a3b
+    m_SelectedIDs: be380000
+    m_LastClickedID: 14526
+    m_ExpandedIDs: 00000000bc380000be38000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1284,7 +1284,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000003900000239000000ca9a3b
+    m_ExpandedIDs: 00000000bc380000be380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300006c57ffff206f0000a27f00003c6e00003a2d0000c26400005c28ffff7a41000018340000dc310000d23300000833000058340000e0310000d8d80000305d0000528407008a420000fc400000b0370000fe370000e2420000da350000c87200006a440000a8430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
