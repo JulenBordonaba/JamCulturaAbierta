@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_MisAsstes/Scenes/MainMenu.unity
+- path: Assets/_MisAsstes/Scenes/AL0264.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
