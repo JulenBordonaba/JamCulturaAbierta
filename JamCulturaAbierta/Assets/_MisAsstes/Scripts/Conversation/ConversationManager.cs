@@ -6,6 +6,7 @@ using UnityEngine;
 public class ConversationManager : Singleton<ConversationManager>
 {
     public event Action<string> OnTriggerSet;
+
     
 
     public void SetTrigger(string trigger)

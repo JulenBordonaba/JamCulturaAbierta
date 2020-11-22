@@ -9,21 +9,21 @@ public class OptionsMenu : MonoBehaviour
     public static Settings settings;
 
     [Header("Graphics")]
-    public Slider brightnessSlider;
-    public Slider vSyncSlider;
-    public Slider antialiasingSlider;
-    public Slider textureQualitySlider;
-    public Slider shadowResolutionSlider;
+    public MySlider brightnessSlider;
+    public MySlider vSyncSlider;
+    public MySlider antialiasingSlider;
+    public MySlider textureQualitySlider;
+    public MySlider shadowResolutionSlider;
 
     [Header("Controller")]
-    public Slider sensitivitySlider;
-    public Slider invertControlsSlider;
-    public Slider controllerSlider;
+    public MySlider sensitivitySlider;
+    public MySlider invertControlsSlider;
+    public MySlider controllerSlider;
 
     [Header("Music")]
-    public Slider generalVolumeSlider;
-    public Slider musicVolumeSlider;
-    public Slider effectVolumeSlider;
+    public MySlider generalVolumeSlider;
+    public MySlider musicVolumeSlider;
+    public MySlider effectVolumeSlider;
 
     public Dictionary<int, bool> intToBool = new Dictionary<int, bool>()
     {
@@ -37,18 +37,25 @@ public class OptionsMenu : MonoBehaviour
         {true,1 }
     };
 
+    private static bool slidersSet = false;
 
 
-    private void Start()
+    IEnumerator WaitUntilDataIsLoaded()
     {
+        yield return new WaitUntil(() => SaveLoadData.Instance.dataLoaded);
         SetQualitySettings();
         SetSliderValues();
-    }
 
+    }
+    
     public void OnEnable()
     {
-        SetQualitySettings();
-        SetSliderValues();
+        StartCoroutine(WaitUntilDataIsLoaded());
+    }
+
+    private void OnDisable()
+    {
+        slidersSet = false;
     }
 
     public void SetQualitySettings()
@@ -60,8 +67,20 @@ public class OptionsMenu : MonoBehaviour
         QualitySettings.shadowResolution = (UnityEngine.ShadowResolution)settings.shadowResolution;
     }
 
+
+    private void Update()
+    {
+        if (!slidersSet) return;
+        ChangeSensitivity();
+        ChangeGeneralVolume();
+        ChangeEffectVolume();
+        ChangeMusicVolume();
+    }
+
     public void SetSliderValues()
     {
+        
+
         //sonido
         if (musicVolumeSlider != null)
             musicVolumeSlider.value = settings.musicVolume;
@@ -70,25 +89,27 @@ public class OptionsMenu : MonoBehaviour
         if (generalVolumeSlider != null)
             generalVolumeSlider.value = settings.generalVolume;
 
-        //graphics
-        if (vSyncSlider != null)
-            vSyncSlider.value = settings.vSync;
-        if (brightnessSlider != null)
-            brightnessSlider.value = settings.brightness;
-        if (antialiasingSlider != null)
-            antialiasingSlider.value = settings.antialiasing;
-        if (textureQualitySlider != null)
-            textureQualitySlider.value = settings.textureQuality;
-        if (shadowResolutionSlider != null)
-            shadowResolutionSlider.value = settings.shadowResolution;
+        ////graphics
+        //if (vSyncSlider != null)
+        //    vSyncSlider.value = settings.vSync;
+        //if (brightnessSlider != null)
+        //    brightnessSlider.value = settings.brightness;
+        //if (antialiasingSlider != null)
+        //    antialiasingSlider.value = settings.antialiasing;
+        //if (textureQualitySlider != null)
+        //    textureQualitySlider.value = settings.textureQuality;
+        //if (shadowResolutionSlider != null)
+        //    shadowResolutionSlider.value = settings.shadowResolution;
 
         //controller
-        if (controllerSlider != null)
-            controllerSlider.value = (int)settings.controllerType;
-        if (invertControlsSlider != null)
-            invertControlsSlider.value = boolToInt[settings.inverted];
+        //if (controllerSlider != null)
+        //    controllerSlider.value = (int)settings.controllerType;
+        //if (invertControlsSlider != null)
+        //    invertControlsSlider.value = boolToInt[settings.inverted];
         if (sensitivitySlider != null)
-            sensitivitySlider.value = settings.sensitivity.y / 10f;
+            sensitivitySlider.value = settings.sensitivity.y;
+
+        slidersSet = true;
     }
 
 
@@ -115,8 +136,8 @@ public class OptionsMenu : MonoBehaviour
 
     public void ChangeSensitivity()
     {
-        settings.sensitivity.x = sensitivitySlider.value * 10f;
-        settings.sensitivity.y = sensitivitySlider.value * 10f;
+        settings.sensitivity.x = sensitivitySlider.value;
+        settings.sensitivity.y = sensitivitySlider.value;
     }
 
     public void ChooseController()
@@ -167,6 +188,7 @@ public class OptionsMenu : MonoBehaviour
 
 }
 
+[System.Serializable]
 public class Settings
 {
     public float brightness = RenderSettings.ambientLight.r;

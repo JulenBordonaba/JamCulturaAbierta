@@ -7,13 +7,12 @@ public class SaveLoadData : Singleton<SaveLoadData>
     [HideInInspector]
     public bool dataLoaded = false;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
         Application.targetFrameRate = 60;
         LoadData();
     }
-
 
     private void OnApplicationPause(bool pause)
     {

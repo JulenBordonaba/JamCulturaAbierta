@@ -10,55 +10,29 @@ public class PauseManager : Singleton<PauseManager>
 
     #region Before pause settings
 
-    private PauseSettings pauseSettings;
+    private PauseSettings pauseSettings = new PauseSettings();
 
     #endregion
+
+    
+
     public void Pause()
     {
-        if (pauseSettings == null)
-        {
-            pauseSettings = new PauseSettings();
-        }
-        SaveSettings(ref pauseSettings);
 
-        SetPauseSettings();
+        pauseSettings?.SaveSettings();
+
+        PauseSettings.PauseConfiguration.ApplySettings();
 
         onPause = true;
     }
 
     public void Resume()
     {
-        if (pauseSettings == null)
-        {
-            pauseSettings = new PauseSettings();
-        }
-        LoadSettings(pauseSettings);
+        pauseSettings?.ApplySettings();
 
         onPause = false;
     }
-
-    private void SaveSettings(ref PauseSettings settings)
-    {
-
-        settings.cursorVisible = Cursor.visible;
-        settings.cursorLockMode = Cursor.lockState;
-        settings.timeScale = Time.timeScale;
-    }
-
-    private void SetPauseSettings()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0;
-    }
-
-    private void LoadSettings(PauseSettings settings)
-    {
-        Cursor.visible = settings.cursorVisible;
-        Cursor.lockState = settings.cursorLockMode;
-        Time.timeScale = settings.timeScale;
-    }
-
+    
 
     private void OnLevelWasLoaded(int level)
     {
@@ -79,5 +53,33 @@ public class PauseSettings
         cursorVisible = true;
         cursorLockMode = CursorLockMode.None;
         timeScale = 1;
+    }
+
+    public void ApplySettings()
+    {
+        Cursor.visible = cursorVisible;
+        Cursor.lockState = cursorLockMode;
+        Time.timeScale = timeScale;
+    }
+
+    public void SaveSettings()
+    {
+        
+        cursorVisible = Cursor.visible;
+        cursorLockMode = Cursor.lockState;
+        timeScale = Time.timeScale;
+    }
+
+    public static PauseSettings PauseConfiguration
+    {
+        get
+        {
+
+            PauseSettings ps = new PauseSettings();
+            ps.timeScale = 0;
+            ps.cursorVisible = true;
+            ps.cursorLockMode = CursorLockMode.None;
+            return ps;
+        }
     }
 }

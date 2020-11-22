@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,20 +8,16 @@ public class Cuadro : MonoBehaviour, IInteractable
     public static Cuadro current;
     public Transform cameraPivot;
     public Transform cameraTarget;
+    public CinemachineVirtualCamera travellCamera;
     public float orthographicSize = 1.5f;
+
+    public Transform spawnPosition;
 
     public Transform inPaintObjects;
 
     public Cuadro pair;
 
-
-    public Dictionary<int, Color> colors = new Dictionary<int, Color>()
-    {
-        {0,Color.blue },
-        {1,Color.red },
-        {2,Color.green },
-        {3,Color.yellow },
-    };
+    
 
     private void Awake()
     {

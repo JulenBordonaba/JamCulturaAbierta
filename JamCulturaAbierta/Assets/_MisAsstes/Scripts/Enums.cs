@@ -13,4 +13,9 @@ public enum ControllerType
     PS4, Xbox
 }
 
+public enum SliderMode
+{
+    filled, scaled
+}
+
 
