@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7b5c6f05da16c499b4cacffcc8b6ac, type: 3}
+  m_Name: Estado_01
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400000, guid: 3e39279930961734e89f2a44c7102fc2, type: 2}
+  - {fileID: 11400000, guid: d2c995c220cd57f4e83215abcebb00db, type: 2}
+  - {fileID: 11400000, guid: a81d0333279c40748adb8d643acdf19d, type: 2}
+  auxiliarEvent: {fileID: 0}
+  enterTrigger: 

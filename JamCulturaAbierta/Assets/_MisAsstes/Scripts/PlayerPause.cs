@@ -9,6 +9,12 @@ public class PlayerPause : MonoBehaviour
     public GameObject mainPauseMenu;
     public GameObject[] pauseSubmenus;
 
+
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -49,6 +55,7 @@ public class PlayerPause : MonoBehaviour
     public void Resume()
     {
         PauseManager.Instance.Resume();
+        
         pauseMenu?.SetActive(false);
     }
 }

@@ -17,7 +17,7 @@ public class ConversationOptionsGroup
 
     public void Close()
     {
-        animator.SetTrigger("Close");
+        animator.SetTrigger("_Close");
         
     }
 
