@@ -55,7 +55,7 @@ public class TextWritter : MonoBehaviour
             myText.text += c;
             if(characterSound != null)
             {
-                audioSource.PlayOneShot(characterSound);
+                //audioSource.PlayOneShot(characterSound);
             }
             yield return new WaitForSeconds(delay);
         }

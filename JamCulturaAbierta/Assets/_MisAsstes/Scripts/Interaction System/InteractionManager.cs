@@ -36,7 +36,14 @@ public class InteractionManager : MonoBehaviour, IPlayer
 
     private void Start()
     {
-        minimap = GetComponent<PlayerMinimap>();
+        try
+        {
+            minimap = GetComponent<PlayerMinimap>();
+        }
+        catch
+        {
+
+        }
         crosshairImageRect = crosshair.sprite.rect;
         Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.ForceSoftware);
     }
@@ -55,7 +62,10 @@ public class InteractionManager : MonoBehaviour, IPlayer
 
     public void Interact()
     {
-        if (minimap.isMapOpen) return;
+        if(minimap!=null)
+        {
+            if (minimap.isMapOpen) return;
+        }
         Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 

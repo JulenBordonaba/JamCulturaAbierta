@@ -74,7 +74,7 @@ crashlytics-build.properties
 
 
 # Temp Folder
-*Temp/
+*/Temp/
 
 # No extension files
 *

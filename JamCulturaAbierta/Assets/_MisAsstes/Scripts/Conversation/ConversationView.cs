@@ -10,6 +10,8 @@ public class ConversationView : MonoBehaviour, IInteractable
 
     public GameObject conversationObject;
 
+    public bool inMenu = false;
+
     [Header("State Data")]
     public ConversationState[] states;
 
@@ -91,7 +93,7 @@ public class ConversationView : MonoBehaviour, IInteractable
     {
         if(itemId==requieredItemId)
         {
-            SetTrigger(correctItemTrigger);
+            ConversationManager.Instance.SetTrigger(correctItemTrigger);
             return true;
         }
         return false;
@@ -112,6 +114,7 @@ public class ConversationView : MonoBehaviour, IInteractable
 
         textWritter.myText = messageText;
         textWritter.WriteText(message);
+        if(!inMenu)
         PlayerManager.Instance.Pause();
 
         StartCoroutine(WaitUntilWrittingEnd());

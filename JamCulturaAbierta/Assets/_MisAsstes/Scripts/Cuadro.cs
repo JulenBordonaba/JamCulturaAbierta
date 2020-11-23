@@ -17,10 +17,11 @@ public class Cuadro : MonoBehaviour, IInteractable
 
     public Cuadro pair;
 
-    
+    public bool inMenu = false;
 
     private void Awake()
     {
+        if(!inMenu)
         inPaintObjects.gameObject.SetActive(false);
     }
 

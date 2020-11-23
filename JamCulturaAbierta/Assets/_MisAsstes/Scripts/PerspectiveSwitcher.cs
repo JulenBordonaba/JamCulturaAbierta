@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MatrixBlender))]
 public class PerspectiveSwitcher : MonoBehaviour
 {
+    public bool orthog = false;
     private Matrix4x4 ortho,
                         perspective;
     public float fov = 60f,
@@ -21,8 +22,17 @@ public class PerspectiveSwitcher : MonoBehaviour
         ortho = Matrix4x4.Ortho(-orthographicSize * aspect, orthographicSize * aspect, -orthographicSize, orthographicSize, near, far);
         perspective = Matrix4x4.Perspective(fov, aspect, near, far);
         blender = (MatrixBlender)GetComponent(typeof(MatrixBlender));
-        blender.myCamera.projectionMatrix = perspective;
-        orthoOn = false;
+        if(orthog)
+        {
+            blender.myCamera.projectionMatrix = ortho;
+            orthoOn = true;
+        }
+        else
+        {
+            blender.myCamera.projectionMatrix = perspective;
+            orthoOn = false;
+        }
+        
     }
 
     //void Update()
