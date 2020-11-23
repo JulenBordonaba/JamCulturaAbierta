@@ -35,7 +35,6 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
-*.csproj
 *.suo
 *.tmp
 *.user
@@ -47,7 +46,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-*.log
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -71,15 +69,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-
-# Temp Folder
-*/Temp/
-
-# No extension files
-*
-!/**/
-!*.*
-
-# Specific Files
-JamCulturaAbierta/Library/ArtifactDB
