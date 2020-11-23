@@ -80,3 +80,6 @@ crashlytics-build.properties
 *
 !/**/
 !*.*
+
+# Specific Files
+JamCulturaAbierta/Library/ArtifactDB
