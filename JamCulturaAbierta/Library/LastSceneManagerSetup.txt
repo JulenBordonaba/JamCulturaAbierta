@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/_MisAsstes/Scenes/Museo.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
